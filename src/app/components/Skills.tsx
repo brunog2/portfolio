@@ -17,8 +17,8 @@ function SkillBadge({ name, index }: SkillBadgeProps) {
       className="group relative"
     >
       <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 dark:from-primary-400 dark:to-accent-400 opacity-0 group-hover:opacity-20 rounded-lg blur transition-all" />
-      <div className="relative px-4 py-3 bg-card/90 border border-primary-500/20 dark:border-primary-400/20 hover:border-primary-500/60 dark:hover:border-primary-400/60 rounded-lg transition-all text-center">
-        <span className="font-semibold text-foreground group-hover:text-primary-600 dark:group-hover:text-primary-300 transition-colors">
+      <div className="relative px-4 py-3 bg-slate-50 border border-slate-200 text-slate-900 shadow-sm dark:bg-slate-950/70 dark:border-slate-700 dark:text-slate-100 dark:shadow-black/20 hover:border-primary-500/60 dark:hover:border-primary-400/60 rounded-lg transition-all text-center">
+        <span className="font-semibold tracking-tight group-hover:text-primary-600 dark:group-hover:text-primary-200 transition-colors">
           {name}
         </span>
       </div>
