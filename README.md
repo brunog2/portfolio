@@ -56,8 +56,4 @@ npm run build
 - `src/app/components/` componentes das seções e UI base
 - `src/styles/` estilos globais, fontes e tema
 
-## Origem do layout
 
-O projeto foi baseado no arquivo de Figma do portfólio:
-
-https://www.figma.com/design/1nzRjdcjrK5UrOOtKYu5Dy/Portfolio-Web-para-Desenvolvedor
