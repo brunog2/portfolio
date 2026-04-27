@@ -49,11 +49,11 @@ export function About() {
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 dark:bg-primary-400/10 border border-primary-500/20 dark:border-primary-400/20 mb-6"
             >
-              <span className="text-sm font-medium text-primary-700 dark:text-primary-300">
+              <span className="text-sm font-semibold text-foreground">
                 👨‍💻 Sobre Mim
               </span>
             </motion.div>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 dark:from-primary-400 dark:to-accent-400 bg-clip-text text-transparent mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Desenvolvedor Full Stack
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

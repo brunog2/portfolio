@@ -164,11 +164,11 @@ export function Experience() {
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/10 dark:bg-accent-400/10 border border-accent-500/20 dark:border-accent-400/20 mb-6"
             >
-              <span className="text-sm font-medium text-accent-700 dark:text-accent-300">
+              <span className="text-sm font-semibold text-foreground">
                 💼 Carreira
               </span>
             </motion.div>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-accent-600 to-primary-600 dark:from-accent-400 dark:to-primary-400 bg-clip-text text-transparent mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Experiência Profissional
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

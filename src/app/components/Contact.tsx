@@ -88,11 +88,11 @@ export function Contact() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 dark:bg-primary-400/10 border border-primary-500/20 dark:border-primary-400/20 mb-6"
             >
               <Send className="w-4 h-4 text-primary-600 dark:text-primary-400" />
-              <span className="text-sm font-medium text-primary-700 dark:text-primary-300">
+              <span className="text-sm font-semibold text-foreground">
                 Vamos Conversar
               </span>
             </motion.div>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 dark:from-primary-400 dark:to-accent-400 bg-clip-text text-transparent mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Entre em Contato
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -159,9 +159,6 @@ export function Contact() {
                 <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
-            <p className="mt-6 text-muted-foreground">
-              Respondo em até 24 horas
-            </p>
           </motion.div>
         </motion.div>
       </div>

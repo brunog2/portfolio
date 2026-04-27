@@ -1,9 +1,63 @@
-# Portfolio Bruno Gomes - Desenvolvedor
+# Portfolio Bruno Gomes
 
-This is a code bundle for Portfolio Bruno Gomes - Desenvolvedor. The original project is available at https://www.figma.com/design/1nzRjdcjrK5UrOOtKYu5Dy/Portfolio-Web-para-Desenvolvedor.
+Portfólio pessoal de Bruno Gomes, desenvolvedor full stack, criado a partir de um layout no Figma e implementado com foco em uma experiência visual moderna, responsiva e com animações leves.
 
-## Running the code
+## Visão geral
 
-Run `npm i` to install the dependencies.
+O projeto apresenta uma landing page de portfólio com navegação por seções, alternância de tema claro/escuro e cards destacados para experiências, projetos, formação, habilidades e contato.
 
-Run `npm run dev` to start the development server.
+## Stack
+
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS 4
+- Motion
+- Lucide React
+- Radix UI
+- shadcn/ui primitives
+- MUI icons e componentes selecionados
+
+## Seções do site
+
+- Hero com apresentação, links externos e dados de contato
+- Sobre
+- Experiência
+- Projetos
+- Educação
+- Skills
+- Contato
+- Footer
+
+## Como rodar
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+Gere a build de produção:
+
+```bash
+npm run build
+```
+
+## Estrutura
+
+- `src/main.tsx` ponto de entrada da aplicação
+- `src/app/App.tsx` composição principal da página
+- `src/app/components/` componentes das seções e UI base
+- `src/styles/` estilos globais, fontes e tema
+
+## Origem do layout
+
+O projeto foi baseado no arquivo de Figma do portfólio:
+
+https://www.figma.com/design/1nzRjdcjrK5UrOOtKYu5Dy/Portfolio-Web-para-Desenvolvedor

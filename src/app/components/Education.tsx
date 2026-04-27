@@ -116,7 +116,7 @@ export function Education() {
                 Educação
               </span>
             </motion.div>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 dark:from-primary-400 dark:to-accent-400 bg-clip-text text-transparent mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Formação & Certificados
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

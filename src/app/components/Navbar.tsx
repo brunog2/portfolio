@@ -47,7 +47,7 @@ export function Navbar() {
           <div className="flex items-center justify-between h-16 md:h-20">
             <button
               onClick={() => scrollToSection('#home')}
-              className="flex items-center gap-2 group"
+              className="flex items-center gap-2 group cursor-pointer"
             >
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 dark:from-primary-400 dark:to-accent-400 rounded-lg blur opacity-50 group-hover:opacity-75 transition-opacity" />
@@ -55,7 +55,7 @@ export function Navbar() {
                   <Code2 className="w-5 h-5 text-white" />
                 </div>
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 dark:from-primary-400 dark:to-accent-400 bg-clip-text text-transparent">
+              <span className="text-xl font-bold text-foreground">
                 BG
               </span>
             </button>
@@ -82,6 +82,9 @@ export function Navbar() {
               <ThemeToggle />
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label={isMobileMenuOpen ? 'Fechar menu de navegacao' : 'Abrir menu de navegacao'}
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-nav-menu"
                 className="p-2 rounded-lg bg-primary-500/10 dark:bg-primary-400/10 border border-primary-500/20 dark:border-primary-400/20 text-foreground"
               >
                 {isMobileMenuOpen ? (
@@ -103,6 +106,7 @@ export function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.3 }}
+            id="mobile-nav-menu"
             className="fixed inset-0 z-40 bg-background/95 dark:bg-background/95 backdrop-blur-lg md:hidden"
           >
             <div className="flex flex-col items-center justify-center h-full gap-2 px-8">

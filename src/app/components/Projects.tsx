@@ -3,16 +3,18 @@ import { ExternalLink, Github, FolderGit2 } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 interface ProjectCardProps {
+  id: string;
   title: string;
   description: string;
   image: string;
   tags: string[];
+  highlights: string[];
   liveUrl?: string;
   githubUrl?: string;
   index: number;
 }
 
-function ProjectCard({ title, description, image, tags, liveUrl, githubUrl, index }: ProjectCardProps) {
+function ProjectCard({ title, description, image, tags, highlights, liveUrl, githubUrl, index }: ProjectCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -39,6 +41,15 @@ function ProjectCard({ title, description, image, tags, liveUrl, githubUrl, inde
           <p className="text-muted-foreground mb-4 leading-relaxed flex-1">
             {description}
           </p>
+
+          <ul className="space-y-2 mb-5">
+            {highlights.map((highlight) => (
+              <li key={highlight} className="text-sm text-foreground/80 leading-relaxed flex gap-2">
+                <span className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-primary-500 dark:bg-primary-400 flex-shrink-0" />
+                <span>{highlight}</span>
+              </li>
+            ))}
+          </ul>
           
           <div className="flex flex-wrap gap-2 mb-6">
             {tags.map((tag) => (
@@ -68,10 +79,11 @@ function ProjectCard({ title, description, image, tags, liveUrl, githubUrl, inde
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Ver codigo no GitHub"
                 className="flex items-center justify-center gap-2 px-4 py-3 bg-card border-2 border-border hover:border-primary-500 dark:hover:border-primary-400 rounded-xl transition-all font-semibold"
               >
                 <Github className="w-4 h-4" />
-                {!liveUrl && 'GitHub'}
+                GitHub
               </a>
             )}
           </div>
@@ -82,18 +94,49 @@ function ProjectCard({ title, description, image, tags, liveUrl, githubUrl, inde
 }
 
 export function Projects() {
-  // Array vazio para você adicionar seus projetos freelancer
   const projects: ProjectCardProps[] = [
-    // Exemplo de como adicionar um projeto:
-    // {
-    //   title: 'Nome do Projeto',
-    //   description: 'Descrição detalhada do projeto e seu impacto',
-    //   image: 'URL_DA_IMAGEM',
-    //   tags: ['React', 'TypeScript', 'Node.js'],
-    //   liveUrl: 'https://projeto.com',
-    //   githubUrl: 'https://github.com/usuario/repo',
-    //   index: 0
-    // }
+    {
+      id: 'marine-tour',
+      title: 'Marine Tour',
+      description: 'Desenvolvimento completo de aplicativo mobile para fomento do turismo local.',
+      image: 'https://images.unsplash.com/photo-1454391304352-2bf4678b1a7a?auto=format&fit=crop&w=1200&q=80',
+      tags: ['React Native', 'Expo', 'TypeScript', 'WebView', 'Deep Link'],
+      highlights: [
+        'App Android/iOS em React Native + Expo com TypeScript, focado em manutenibilidade e escalabilidade.',
+        'Fluxo de pagamento de reservas com WebViews e atualização de status em tempo real.',
+        'Integração com câmera, galeria, localização, mapas e deep link.'
+      ],
+      liveUrl: 'https://marinetour.com.br/',
+      index: 0
+    },
+    {
+      id: 'bspay',
+      title: 'BSPay',
+      description: 'Aplicativo mobile completo para gateway de pagamentos com foco em performance, segurança e escalabilidade.',
+      image: 'https://images.unsplash.com/photo-1556741533-f6acd647d2fb?auto=format&fit=crop&w=1200&q=80',
+      tags: ['React Native', 'Expo', 'TypeScript', 'JWT', 'Pagamentos'],
+      highlights: [
+        'Arquitetura do app construída do zero com foco em evolução do produto e manutenção.',
+        'Fluxo de pagamentos integrado a gateway externo com validação e estados em tempo real.',
+        'Controle de sessão com JWT, persistência segura e renovação de tokens.',
+        'Separação de responsabilidades e reaproveitamento de componentes para escala.'
+      ],
+      liveUrl: 'https://bspay.co/',
+      index: 1
+    },
+    {
+      id: 'rest-cotacao-seguros',
+      title: 'REST - Cotação de Seguros',
+      description: 'Aplicação Angular 20 para cotação de diferentes tipos de seguros.',
+      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80',
+      tags: ['Angular 20', 'TypeScript', 'Reactive Forms', 'HttpClient', 'JWT'],
+      highlights: [
+        'Arquitetura frontend orientada a performance e escalabilidade.',
+        'Gerenciamento de estado e formulários reativos com Angular Services.',
+        'Integração com APIs via HttpClient e Interceptors para autorização com JWT.'
+      ],
+      index: 2
+    }
   ];
 
   return (
@@ -121,44 +164,19 @@ export function Projects() {
                 Portfolio
               </span>
             </motion.div>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 dark:from-primary-400 dark:to-accent-400 bg-clip-text text-transparent mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Projetos & Cases
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Alguns dos projetos freelancer e cases relevantes que desenvolvi
+              Projetos e cases relevantes que desenvolvi com foco em impacto, performance e escalabilidade
             </p>
           </div>
-          
-          {projects.length > 0 ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
-                <ProjectCard key={index} {...project} index={index} />
-              ))}
-            </div>
-          ) : (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-accent-500/10 dark:from-primary-400/10 dark:to-accent-400/10 rounded-2xl blur-xl" />
-              <div className="relative text-center py-20 bg-card border-2 border-dashed border-border rounded-2xl">
-                <div className="inline-flex p-6 rounded-full bg-primary-500/10 dark:bg-primary-400/10 mb-6">
-                  <FolderGit2 className="w-12 h-12 text-primary-600 dark:text-primary-400" />
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-3">
-                  Seção de Projetos
-                </h3>
-                <p className="text-muted-foreground text-lg max-w-md mx-auto mb-2">
-                  Preparada para adicionar seus projetos freelancer e cases relevantes
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Edite <code className="px-2 py-1 bg-muted rounded text-primary-600 dark:text-primary-400 font-mono">/src/app/components/Projects.tsx</code>
-                </p>
-              </div>
-            </motion.div>
-          )}
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <ProjectCard key={project.id} {...project} index={index} />
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone, MapPin, ArrowDown, Sparkles } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, MapPin, ArrowDown } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export function Hero() {
@@ -48,22 +48,10 @@ export function Hero() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-5xl mx-auto"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 dark:bg-primary-400/10 border border-primary-500/20 dark:border-primary-400/20 mb-8 backdrop-blur-sm"
-          >
-            <Sparkles className="w-4 h-4 text-primary-600 dark:text-primary-400" />
-            <span className="text-sm font-medium text-primary-700 dark:text-primary-300">
-              Disponível para novos projetos
-            </span>
-          </motion.div>
-          
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500 dark:from-primary-400 dark:via-primary-300 dark:to-accent-400 bg-clip-text text-transparent"
           >
             Bruno Gomes
@@ -98,7 +86,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-wrap justify-center gap-4 mb-12"
           >
             <a
@@ -108,7 +96,7 @@ export function Hero() {
               <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative flex items-center gap-2 font-semibold">
                 <Mail className="w-5 h-5" />
-                Fale Comigo
+                Entre em Contato
               </div>
             </a>
             <a
@@ -138,7 +126,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-wrap justify-center gap-6 text-muted-foreground"
           >
             <div className="flex items-center gap-2">
@@ -154,13 +142,14 @@ export function Hero() {
               <span>Maceió, AL</span>
             </div>
           </motion.div>
-          
+
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
             onClick={() => scrollToSection('about')}
-            className="absolute bottom-12 left-1/2 -translate-x-1/2 p-3 rounded-full bg-primary-500/10 dark:bg-primary-400/10 border border-primary-500/20 dark:border-primary-400/20 hover:bg-primary-500/20 dark:hover:bg-primary-400/20 transition-colors animate-bounce"
+            aria-label="Rolar para a secao Sobre"
+            className="mt-10 p-3 rounded-full bg-primary-500/10 dark:bg-primary-400/10 border border-primary-500/20 dark:border-primary-400/20 hover:bg-primary-500/20 dark:hover:bg-primary-400/20 transition-colors animate-bounce"
           >
             <ArrowDown className="w-5 h-5 text-primary-600 dark:text-primary-400" />
           </motion.button>

@@ -17,8 +17,8 @@ function SkillBadge({ name, index }: SkillBadgeProps) {
       className="group relative"
     >
       <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 dark:from-primary-400 dark:to-accent-400 opacity-0 group-hover:opacity-20 rounded-lg blur transition-all" />
-      <div className="relative px-4 py-3 bg-card border border-border hover:border-primary-500/50 dark:hover:border-primary-400/50 rounded-lg transition-all text-center">
-        <span className="font-medium text-foreground group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+      <div className="relative px-4 py-3 bg-card/90 border border-primary-500/20 dark:border-primary-400/20 hover:border-primary-500/60 dark:hover:border-primary-400/60 rounded-lg transition-all text-center">
+        <span className="font-semibold text-foreground group-hover:text-primary-600 dark:group-hover:text-primary-300 transition-colors">
           {name}
         </span>
       </div>
@@ -82,11 +82,11 @@ export function Skills() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/10 dark:bg-accent-400/10 border border-accent-500/20 dark:border-accent-400/20 mb-6"
             >
               <Zap className="w-4 h-4 text-accent-600 dark:text-accent-400" />
-              <span className="text-sm font-medium text-accent-700 dark:text-accent-300">
+              <span className="text-sm font-semibold text-foreground">
                 Stack
               </span>
             </motion.div>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-accent-600 to-primary-600 dark:from-accent-400 dark:to-primary-400 bg-clip-text text-transparent mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Competências Técnicas
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
